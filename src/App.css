@@ -1,0 +1,105 @@
+* {
+    font-family: "IBM Plex Mono";
+    color: #e6e6e6;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: #101010;
+    /* overflow: hidden; */
+}
+
+html {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+}
+
+html::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='30' stitchTiles='stitch'/%3E%3CfeBlend mode='screen'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23noise)' opacity='0.8'/%3E%3C/svg%3E");
+    background-size: cover;
+    opacity: 0.05;
+    z-index: 1;
+}
+
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/portfolio/moon.webp") no-repeat center center fixed;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: 2;
+}
+
+.pixel1 {
+    font-family: "Press Start 2P";
+    color: #dbdbdb;
+}
+
+.pixel2 {
+    font-family: "Pixelify Sans";
+    color: #dbdbdb;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(1.03);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-up:hover {
+    display: inline-block;
+    animation: scaleAnimation 0.2s ease-in-out forwards;
+}
+
+
+@keyframes flowAnimation {
+
+    0%,
+    100% {
+        transform: translateY(-2px);
+    }
+
+    50% {
+        transform: translateY(2px);
+    }
+}
+
+.flow {
+    display: inline-block;
+    animation: flowAnimation 1.5s ease-in-out infinite;
+}
+
+@keyframes popAnimation {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+}
+
+.pop {
+    display: inline-block;
+    animation: popAnimation 0.3s ease-in forwards;
+}
